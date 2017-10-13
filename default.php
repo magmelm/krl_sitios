@@ -95,7 +95,7 @@ img:hover{
 	<a href="http://www.mozilla.org/en-US/firefox/?">			<img src="firefox_logo.jpg" alt="firefox"></a> 
 	<a href="http://www.osalt.com/">							<img src="osalt_logo.jpg" alt="osalt.com"></a> 
 	<a href="http://www.cuevana.tv/">							<img src="cuevana_logo.jpg" alt="cuevana.tv"></a> 
-	<a href="http://www.000webhost.com/">						<img src="000webhost_logo.jpg" alt="000webhost.com"></a>  
+	<a href="http://www.000webhost.com/">						<img src="images/000webhost_logo.jpg" alt="000webhost.com"></a>  
 	<a href="http://www.eluniversal.com.mx/">					<img src="el_universal.jpg" alt="el universal"></a> 
 	<a href="http://www.record.com.mx/">						<img src="record.jpg" alt="record"></a> 
 	<a href="http://www.excelsior.com.mx/hacker-0">				<img src="excelsior_logo.jpg" alt="excelsior hacker"></a> 
