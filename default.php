@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head>
 
-<meta charset="utf-8"><title>homepage</title>
+<meta charset="utf-8"><title>krl - sitios</title>
 
 <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"> 
 <script src="js/jquery.js"></script> 
