@@ -4,8 +4,8 @@
 <meta charset="utf-8"><title>homepage</title>
 
 <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"> 
-<script src="jquery.js"></script> 
-<script src="likeaboss.js"></script> 
+<script src="js/jquery.js"></script> 
+<script src="js/likeaboss.js"></script> 
 
 <style type="text/css">
 body{
