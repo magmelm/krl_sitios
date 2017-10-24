@@ -155,6 +155,7 @@ img:hover{
 	
 	<a href="http://www.krl.mx/"><img src="images/krlmx.jpg" alt="krl.mx"></a>
 	
+	
 </div>
 </body></html>
 
