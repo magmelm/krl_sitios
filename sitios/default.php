@@ -152,7 +152,9 @@ img:hover{
 	
 	<a href="http://gnula.nu"><img src="images/gnula.png" alt="Gnula"></a>
 	<a href="http://www.osboxes.org/"><img src="images/osboxes.png" alt="osboxes.org"></a>
-	<a href="http://www.osboxes.org/"><img src="images/osboxes.png" alt="osboxes.org"></a>
+	<a href="http://web.whatsapp.com"><img src="images/whatsapp.jpg" alt="WhatsApp"></a>
+	<a href="https://github.com/login"><img src="images/github.png" alt="GitHub"></a>
+
 	
 	<a href="http://www.krl.mx/"><img src="images/krlmx.jpg" alt="krl.mx"></a>
 	
