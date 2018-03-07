@@ -31,8 +31,6 @@ if (!mysql_query($sql))
 	die('Error: ' . mysql_error());
 }
 
-//echo "<meta http-equiv=\"Location\" content=\"" . $_POST["sitio"] . "\">";
-
 header('Location: '.$_POST["sitio"]);
 
 ?>

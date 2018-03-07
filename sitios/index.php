@@ -11,10 +11,10 @@
 <meta charset="utf-8"><title>krl - sitios</title>
 
 <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"> 
-<!-- script src="js/jquery.js"></script --> 
-<script src="http://sitios.krl.mx/js/jquery.js"></script> 
-<!-- script src="js/likeaboss.js"></script --> 
-<script src="http://sitios.krl.mx/js/likeaboss.js"></script> 
+<script src="js/jquery.js"></script> 
+<!-- script src="http://sitios.krl.mx/js/jquery.js"></script --> 
+<script src="js/likeaboss.js"></script> 
+<!-- script src="http://sitios.krl.mx/js/likeaboss.js"></script --> 
 
 <style type="text/css">
 body{
@@ -55,6 +55,20 @@ img:hover{
 	/*align: center;*/
 	align-content: center;
 	background-color: #ffffff;
+}
+
+#parent4 {
+    position: fixed;
+    border: 1px solid blue;
+    background-color: rgba(33,66,99,0.5);    
+
+    width: 100%;
+    /*height: 40px;*/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-content: center;
+    align-items: center;
 }
 
 </style>
@@ -143,6 +157,11 @@ mysql_free_result($result);
 
 
 
+
+<div id="parent4"> 
+
+<table width="100%" border="0"><tr><td align="right"><a href="subir.php">+</a>&nbsp;</td></tr></table> 
+</div>
 
 </div>
 </body>
