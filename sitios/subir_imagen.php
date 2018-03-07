@@ -129,19 +129,13 @@ if ($uploadOk == 0) {
         
         //-------------------------
         
-$host="localhost"; // Host name
-$username="root"; // Mysql username
-$password=""; // Mysql password
-$db_name="test"; // Database name
-$table_name="test.sitios"; // Database name
-
-/*
-$host="mysql.hostinger.mx"; // Host name
-$username="u879398462_emywa"; // Mysql username
-$password="HhFXVfdcP3Cy"; // Mysql password
-$db_name="u879398462_aqyge"; // Database name
-$table_name="sitios";
-*/
+        $database = include('config.php');
+        
+        $host=$database["host"];
+        $username=$database["username"];
+        $password=$database["password"];
+        $db_name=$database["db_name"];
+        $table_name=$database["table_name"];
 		
         //ob_start();
         

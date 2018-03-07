@@ -1,20 +1,13 @@
 
 
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
 <html>
-
-
-
 <head>
-
 <meta charset="utf-8"><title>krl - sitios</title>
-
 <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"> 
 <script src="js/jquery.js"></script> 
-<!-- script src="http://sitios.krl.mx/js/jquery.js"></script --> 
-<script src="js/likeaboss.js"></script> 
-<!-- script src="http://sitios.krl.mx/js/likeaboss.js"></script --> 
+<script src="js/likeaboss.js"></script>  
 
 <style type="text/css">
 body{
@@ -71,6 +64,12 @@ img:hover{
     align-items: center;
 }
 
+A:link   {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;}
+A:visited{text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;}
+A:active {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;}
+A:hover  {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:12pt;font-weight:bold;}
+
+
 </style>
 
 <script type="text/javascript">
@@ -116,19 +115,13 @@ function go(id_sitio, sitio) {
 
 <?
 
-$host="localhost"; // Host name
-$username="root"; // Mysql username
-$password=""; // Mysql password
-$db_name="test"; // Database name
-$table_name="test.sitios"; // Database name	
+$database = include('config.php');
 
-/*
-$host="mysql.hostinger.mx"; // Host name
-$username="u879398462_emywa"; // Mysql username
-$password="HhFXVfdcP3Cy"; // Mysql password
-$db_name="u879398462_aqyge"; // Database name
-$table_name="sitios"; // Database name	
-*/
+$host=$database["host"];
+$username=$database["username"];
+$password=$database["password"];
+$db_name=$database["db_name"];
+$table_name=$database["table_name"];
 
 
 // Connect to server and select databse.
@@ -136,17 +129,14 @@ mysql_connect($host, $username, $password) or die('cannot connect');
 mysql_select_db($db_name) or die('cannot select DB');
 
 
-$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by visitas desc";
+$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by visitas desc, id_sitio asc";
 
 //echo 'SQL>>>'.$sql."<<<";
 
 $result=mysql_query($sql);
 
-//echo  "<br>";
-
 while ($row = mysql_fetch_assoc($result)) {
 
-	//echo  "<a href=\"".$row['url']."\"><img src=\"images/".$row['imagen_path']."\" alt=\"".$row['sitio']."\"></a>\n";
 	echo  "<a href=\"javascript:void(0);\" onclick=\"go(" . $row['id_sitio'] . ", '".$row['url']."');\"><img src=\"images/".$row['imagen_path']."\" alt=\"".$row['sitio']."\"></a>\n";
 
 }
@@ -158,12 +148,12 @@ mysql_free_result($result);
 
 
 
-<div id="parent4"> 
-
-<table width="100%" border="0"><tr><td align="right"><a href="subir.php">+</a>&nbsp;</td></tr></table> 
-</div>
 
 </div>
+	<br>
+	<div id="parent4"> 
+		<table width="100%" border="0"><tr><td align="center"><a href="subir.php">+</a>&nbsp;</td></tr></table> 
+	</div>
 </body>
 </html>
 
