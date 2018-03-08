@@ -64,10 +64,10 @@ img:hover{
     align-items: center;
 }
 
-A:link   {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;}
-A:visited{text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;}
-A:active {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;}
-A:hover  {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:12pt;font-weight:bold;}
+A:link   {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;font-weight:bold;}
+A:visited{text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;font-weight:bold;}
+A:active {text-decoration:none;color:#000000;cursor:default;font-family:arial;font-size:10pt;font-weight:bold;}
+A:hover  {text-decoration:none;color:#ffffff;cursor:default;font-family:arial;font-size:10pt;font-weight:bold;}
 
 
 </style>
@@ -115,6 +115,9 @@ function go(id_sitio, sitio) {
 
 <?
 
+
+
+
 $database = include('config.php');
 
 $host=$database["host"];
@@ -123,13 +126,29 @@ $password=$database["password"];
 $db_name=$database["db_name"];
 $table_name=$database["table_name"];
 
+$orden="";
+
+if (isset($_GET["o"])) {
+	$orden=$_GET["o"];
+}
+
+
+$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by visitas desc, id_sitio asc";
+
+if($orden=="A-Z") {
+	$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by sitio asc";
+} else if($orden=="Z-A") {
+	$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by sitio desc";
+} else if($orden=="#") {
+	$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by visitas desc, id_sitio asc";
+} else {
+	$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by visitas desc, id_sitio asc";
+}
+
 
 // Connect to server and select databse.
 mysql_connect($host, $username, $password) or die('cannot connect');
 mysql_select_db($db_name) or die('cannot select DB');
-
-
-$sql="SELECT id_sitio, sitio, url, imagen_path, categoria FROM " . $table_name . " order by visitas desc, id_sitio asc";
 
 //echo 'SQL>>>'.$sql."<<<";
 
@@ -150,10 +169,19 @@ mysql_free_result($result);
 
 
 </div>
+
 	<br>
 	<div id="parent4"> 
-		<table width="100%" border="0"><tr><td align="center"><a href="subir.php">+</a>&nbsp;</td></tr></table> 
+		<table width="100%" border="0">
+			<tr>
+				<td align="center"><a href="index.php?o=#">#</a>&nbsp;</td>
+				<td align="center"><a href="index.php?o=A-Z">A-Z</a>&nbsp;</td>
+				<td align="center"><a href="index.php?o=Z-A">Z-A</a>&nbsp;</td>
+				<td align="center"><a href="subir.php">+</a>&nbsp;</td>
+			</tr>
+		</table> 
 	</div>
+	
 </body>
 </html>
 
