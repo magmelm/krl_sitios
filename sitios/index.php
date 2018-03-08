@@ -156,7 +156,7 @@ $result=mysql_query($sql);
 
 while ($row = mysql_fetch_assoc($result)) {
 
-	echo  "<a href=\"javascript:void(0);\" onclick=\"go(" . $row['id_sitio'] . ", '".$row['url']."');\"><img src=\"images/".$row['imagen_path']."\" alt=\"".$row['sitio']."\"></a>\n";
+	echo  "<a href=\"javascript:void(0);\" onclick=\"go(" . $row['id_sitio'] . ", '".$row['url']."');\" title=\"" . $row['sitio'] . "\"><img src=\"images/".$row['imagen_path']."\" alt=\"".$row['sitio']."\"></a>\n";
 
 }
 
